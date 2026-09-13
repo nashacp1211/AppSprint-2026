@@ -154,7 +154,7 @@ Upload your APK using GitHub Releases.
 Add your release link below:
 
 ```
-https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/releases
+https://github.com/nashacp1211/AppSprint-2026/releases
 ```
 
 ---
@@ -191,98 +191,194 @@ https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/releases
 ## Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+git clone https://github.com/nashacp1211/AppSprint-2026.git
 ```
 
-## Navigate to Project
+## Navigate to the MedScan Project
 
 ```bash
-cd YOUR_PROJECT_NAME
+cd AppSprint-2026/med_scan
 ```
 
 ## Install Dependencies
 
-### Flutter
+Make sure Flutter is installed, then run:
 
 ```bash
 flutter pub get
 ```
 
-### React Native
+## Check Flutter Setup
 
 ```bash
-npm install
+flutter doctor
 ```
 
-## Run Application
+Make sure the required Android tools and connected device/emulator are available.
 
-### Flutter
+## Run MedScan
+
+Connect an Android phone or start an Android emulator, then run:
 
 ```bash
 flutter run
 ```
 
-### React Native
+Flutter will build and launch the MedScan application on the connected device.
+
+## Run on Chrome for Testing
+
+For development/testing, MedScan can also be run on Chrome:
 
 ```bash
-npm start
+flutter run -d chrome
 ```
 
----
+## Build APK
+
+To generate an Android APK for installation or competition submission:
+
+```bash
+flutter build apk --release
+```
+
+The generated APK can be found at:
+
+```text
+build/app/outputs/flutter-apk/app-release.apk
+```
+
 
 # 📂 Project Structure
 
-Explain your project structure.
+## Project Structure
 
-Example:
-
-```
-project/
+```text
+med_scan/
 │
 ├── assets/
+│   └── icon/
+│       └── med_scan.png
+│
 ├── lib/
-├── screens/
-├── widgets/
-├── services/
+│   ├── main.dart
+│   ├── models/
+│   │   └── medicine.dart
+│   │
+│   ├── screens/
+│   │   ├── medicine_verification.dart
+│   │   └── expiry_result.dart
+│   │
+│   └── services/
+│       ├── ocr_service.dart
+│       └── expiry_service.dart
+│
+├── android/
+├── ios/
+├── web/
+│
+├── pubspec.yaml
 └── README.md
 ```
 
----
+### Main Components
+
+* **assets/** – Contains application resources such as the MedScan app icon.
+* **lib/main.dart** – The main entry point of the Flutter application and the home dashboard.
+* **models/** – Contains the `Medicine` data model used to store medicine information.
+* **screens/** – Contains the application's user interface screens, including medicine verification and expiry status.
+* **services/** – Contains the application's core logic, such as OCR scanning and expiry-date analysis.
+* **android/** – Contains Android-specific project files required to build and run the application.
+* **ios/** – Contains iOS-specific project files.
+* **web/** – Contains files required for running the Flutter application on the web during development/testing.
+* **pubspec.yaml** – Defines the Flutter project, dependencies, assets, and configuration.
+* **README.md** – Contains project documentation, features, setup instructions, screenshots, and competition information.
+
+### Application Flow
+
+```text
+main.dart
+    │
+    ├── Camera / OCR
+    │       ↓
+    │   ocr_service.dart
+    │       ↓
+    ├── Medicine Verification
+    │       ↓
+    │   medicine.dart
+    │       ↓
+    └── Expiry Analysis
+            ↓
+       expiry_service.dart
+            ↓
+      Expiry Result Screen
+```
+
+This structure keeps the **UI, data models, and application logic separated**, making MedScan easier to develop, test, and maintain.
+
 
 # 🌟 Key Highlights
 
-Mention what makes your project special.
+## What Makes MedScan Special
 
-Examples:
+* **Safety-First Approach** – MedScan does not assume a medicine is safe when its expiry date cannot be verified. It clearly marks it as **“Expiry Unknown”** and advises the user to verify the original packaging or consult a pharmacist.
 
-- Unique approach
-- Technical challenges solved
-- Innovation
-- Real-world usability
+* **OCR + User Verification** – The camera and OCR automatically extract medicine information, but the user can **review and correct the information before it is saved**, reducing errors caused by imperfect scanning.
 
----
+* **Smart Expiry Intelligence** – Medicines are categorized into **Safe, Expiring Soon, Expiring This Month, Expired, and Expiry Unknown**, making expiry information easy to understand.
+
+* **Accessible Health Information** – MedScan combines medicine identification with common uses, side effects, warnings, multilingual support, and text-to-speech.
+
+* **Real-World Usability** – Instead of being designed only for hospitals, MedScan focuses on a common household problem: **managing medicines safely at home**.
+
+* **Technical Innovation** – The application combines **Flutter, Google ML Kit OCR, Firebase, medicine information APIs, multilingual support, and accessibility features** into one mobile solution.
+
+### Key Innovation
+
+The strongest innovation is the combination of **OCR + human verification + safety-first expiry handling**. MedScan is designed not just to read a medicine package, but to help users make safer decisions about medicines kept at home.
+
 
 # 🔮 Future Improvements
 
-Features planned for future versions:
+## Features Planned for Future Versions
 
-- Feature 1
-- Feature 2
-- Feature 3
+* **AI-Powered Medicine Recognition** – Improve medicine identification from images, including difficult-to-read or partially visible packaging.
+* **Smart Family Health Management** – Add advanced family profiles and personalized medicine organization for different family members.
+* **Pharmacy & Healthcare Integration** – Connect users with nearby pharmacies and healthcare professionals for medicine replacement, verification, and safer disposal guidance.
 
----
 
 # 📊 Impact
 
-Explain the expected impact of your application.
+## Expected Impact
 
-Include:
+### Target Users
 
-- Target users
-- Benefits
-- Social/community impact
+MedScan is mainly designed for:
 
----
+* Families and households that keep medicines at home.
+* Elderly people and people who manage multiple medicines.
+* Caregivers who manage medicines for children, parents, or other family members.
+* Users who prefer information in regional languages.
+
+### Benefits
+
+* Helps users identify and track medicine expiry dates.
+* Reduces the risk of accidentally using expired or unverified medicines.
+* Saves time by using camera-based OCR to capture medicine information.
+* Allows users to verify and correct scanned information before saving.
+* Provides useful information such as common uses, side effects, and warnings.
+* Keeps prescription instructions organized in one place.
+* Supports multiple languages and text-to-speech for better accessibility.
+* Helps families manage medicines more safely and efficiently.
+
+### Social and Community Impact
+
+MedScan can promote safer medicine-handling habits at the household level. It can be especially useful for families caring for elderly members or people who take multiple medicines.
+
+By making medicine information easier to understand and highlighting medicines with expired or unknown expiry dates, MedScan can help increase awareness about medicine safety and reduce avoidable risks caused by poor medicine management.
+
+The application also promotes **digital health awareness, accessibility, and responsible medicine use** within the community.
+
 
 # 📜 License
 
