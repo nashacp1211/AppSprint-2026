@@ -116,17 +116,8 @@ Overall, MedScan aims to make household medicine management safer, simpler, and 
 
 
 # 📱 Screenshots
-The following screenshots demonstrate the main features and user flow of MedScan.
+<img width="702" height="1600" alt="scanmedicine" src="https://github.com/user-attachments/assets/dd57a418-545c-403d-9d15-01200d770c23" />
 
-### Application Screenshots
-
-- `assets/screenshots/start.png`
-- `assets/screenshots/login.png`
-- `assets/screenshots/home.png`
-- `assets/screenshots/scanmedicine.png`
-- `assets/screenshots/language.png`
-- `assets/screenshots/addmedicine.png`
-- `assets/screenshots/add.png`
 
 
 # 🎥 Demo Video
