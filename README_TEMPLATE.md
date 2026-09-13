@@ -168,42 +168,28 @@ https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/releases
 
 ## Frontend / Mobile Framework
 
-Example:
-
-- Flutter + Dart
-- React Native
-- Kotlin
-- Swift
-- Other
+* Flutter + Dart
 
 ## Backend
 
-Example:
+* Firebase
 
-- Firebase
-- Node.js
-- Supabase
-- Appwrite
+  * Firebase Authentication
+  * Firebase Cloud Firestore
+  * Firebase Storage
 
 ## Database
 
-Example:
-
-- Firestore
-- SQLite
-- MongoDB
-- PostgreSQL
+* Cloud Firestore
 
 ## APIs / Services Used
 
-List external services:
+* Google ML Kit Text Recognition — Medicine package OCR and text extraction
+* RxNorm API — Medicine identification and standardized medicine information
+* FDA openFDA API — Medicine uses, side effects, and warnings
+* Flutter Text-to-Speech — Accessibility and read-aloud support
+* Image Picker / Camera — Capturing medicine package images
 
-- Maps API
-- AI API
-- Payment API
-- Other integrations
-
----
 
 # 🚀 Installation
 
