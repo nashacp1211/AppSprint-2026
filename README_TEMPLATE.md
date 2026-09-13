@@ -117,6 +117,10 @@ Overall, MedScan aims to make household medicine management safer, simpler, and 
 
 # 📱 Screenshots
 <img width="702" height="1600" alt="scanmedicine" src="https://github.com/user-attachments/assets/dd57a418-545c-403d-9d15-01200d770c23" />
+<img width="720" height="1640" alt="start" src="https://github.com/user-attachments/assets/6ec994e0-33f2-4516-9b16-61c37ab97724" />
+<img width="720" height="1640" alt="language" src="https://github.com/user-attachments/assets/400e9d86-f058-4b17-a807-2e685f8da189" />
+<img width="720" height="1640" alt="login" src="https://github.com/user-attachments/assets/a2d18c84-7c65-4bce-9852-c0d9b535090c" />
+<img width="720" height="1640" alt="addmedicine" src="https://github.com/user-attachments/assets/d2ec6602-bb4e-4af0-8e3d-faca11d2a1ec" />
 
 
 
