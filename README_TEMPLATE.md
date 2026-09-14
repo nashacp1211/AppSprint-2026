@@ -262,6 +262,7 @@ med_scan/
 │
 ├── lib/
 │   ├── main.dart
+│   │
 │   ├── models/
 │   │   └── medicine.dart
 │   │
@@ -276,46 +277,120 @@ med_scan/
 ├── android/
 ├── ios/
 ├── web/
+├── test/
 │
 ├── pubspec.yaml
+├── pubspec.lock
+├── analysis_options.yaml
+├── .gitignore
 └── README.md
 ```
 
 ### Main Components
 
 * **assets/** – Contains application resources such as the MedScan app icon.
-* **lib/main.dart** – The main entry point of the Flutter application and the home dashboard.
-* **models/** – Contains the `Medicine` data model used to store medicine information.
-* **screens/** – Contains the application's user interface screens, including medicine verification and expiry status.
-* **services/** – Contains the application's core logic, such as OCR scanning and expiry-date analysis.
-* **android/** – Contains Android-specific project files required to build and run the application.
+
+* **lib/main.dart** – The main entry point of the MedScan Flutter application. It handles the application setup, home interface, camera access, OCR workflow, and navigation.
+
+* **models/** – Contains the `Medicine` model used to represent and store medicine information such as name, strength, expiry date, instructions, warnings, side effects, and other details.
+
+* **screens/** – Contains the main user interface screens:
+
+  * `medicine_verification.dart` – Displays OCR-detected information and allows the user to verify or edit it before continuing.
+  * `expiry_result.dart` – Displays the medicine's expiry status.
+
+* **services/** – Contains the application's processing and business logic:
+
+  * `ocr_service.dart` – Handles text extraction from medicine images using OCR.
+  * `expiry_service.dart` – Handles expiry-date analysis and expiry status calculation.
+
+* **android/** – Contains Android-specific configuration and files required to build and run MedScan on Android devices.
+
 * **ios/** – Contains iOS-specific project files.
-* **web/** – Contains files required for running the Flutter application on the web during development/testing.
-* **pubspec.yaml** – Defines the Flutter project, dependencies, assets, and configuration.
-* **README.md** – Contains project documentation, features, setup instructions, screenshots, and competition information.
+
+* **web/** – Contains files required to run the Flutter application on the web for development/testing.
+
+* **test/** – Contains Flutter test files used for testing application functionality.
+
+* **pubspec.yaml** – Defines the Flutter project configuration, dependencies, assets, and package requirements.
+
+* **pubspec.lock** – Records the specific dependency versions used by the project.
+
+* **analysis_options.yaml** – Contains Dart/Flutter analysis and linting rules.
+
+* **.gitignore** – Specifies files and folders that should not be uploaded to Git.
+
+* **README.md** – Contains project documentation, features, installation instructions, project structure, and usage information.
 
 ### Application Flow
 
 ```text
-main.dart
-    │
-    ├── Camera / OCR
-    │       ↓
-    │   ocr_service.dart
-    │       ↓
-    ├── Medicine Verification
-    │       ↓
-    │   medicine.dart
-    │       ↓
-    └── Expiry Analysis
-            ↓
-       expiry_service.dart
-            ↓
-      Expiry Result Screen
+                         MedScan
+                            │
+                            ↓
+                       main.dart
+                            │
+                            ↓
+                    📷 Camera / Image
+                            │
+                            ↓
+                     🔍 OCR Processing
+                            │
+                            ↓
+                     ocr_service.dart
+                            │
+                            ↓
+                  Medicine Verification
+                            │
+                            ↓
+              medicine_verification.dart
+                            │
+                     ┌──────┴──────┐
+                     │             │
+                User verifies   User edits
+                     │             │
+                     └──────┬──────┘
+                            ↓
+                     medicine.dart
+                            │
+                            ↓
+                   Expiry Analysis
+                            │
+                            ↓
+                  expiry_service.dart
+                            │
+                            ↓
+                  Expiry Result Screen
+                            │
+                            ↓
+                    expiry_result.dart
 ```
 
-This structure keeps the **UI, data models, and application logic separated**, making MedScan easier to develop, test, and maintain.
+### Architecture
 
+The project follows a simple separation-of-concerns approach:
+
+```text
+UI Layer
+   │
+   ├── main.dart
+   └── screens/
+          │
+          ↓
+Data Model
+   │
+   └── models/
+          │
+          ↓
+Application Logic
+   │
+   └── services/
+          │
+          ├── OCR Service
+          └── Expiry Service
+```
+
+This organization keeps the **user interface, medicine data, and processing logic separated**, making the MedScan application easier to understand, test, maintain, and extend with future features such as Firebase, notifications, multilingual support, and advanced medicine information.
 
 # 🌟 Key Highlights
 
