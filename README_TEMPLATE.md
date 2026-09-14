@@ -126,38 +126,16 @@ Overall, MedScan aims to make household medicine management safer, simpler, and 
 
 # 🎥 Demo Video
 
-Add your demo video link.
-
-Example:
-
-```
-https://youtube.com/your-demo-link
-```
-
-Demo duration:
-
-**Maximum: 2 minutes**
-
-Your video should show:
-
-- Problem
-- Solution
-- Main features
-- App workflow
-
----
+https://drive.google.com/file/d/1tTwlexSw2QgKQydMABLiSLNnuXfrEgZF/view?usp=drivesdk
 
 # 📦 APK Download
 
-Upload your APK using GitHub Releases.
-
-Add your release link below:
 
 ```
 https://github.com/nashacp1211/AppSprint-2026/releases
 ```
 
----
+
 
 # 🛠️ Tech Stack
 
